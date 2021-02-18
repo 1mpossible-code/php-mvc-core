@@ -1,11 +1,11 @@
 <?php
 
 
-namespace app\core\db;
+namespace impossible\phpmvc\db;
 
 
-use app\core\Application;
-use app\core\Model;
+use impossible\phpmvc\Application;
+use impossible\phpmvc\Model;
 
 abstract class DbModel extends Model
 {

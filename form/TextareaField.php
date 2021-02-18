@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\core\form;
+namespace impossible\phpmvc\form;
 
 
 class TextareaField extends BaseField

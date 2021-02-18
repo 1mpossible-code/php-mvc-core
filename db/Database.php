@@ -1,10 +1,10 @@
 <?php
 
 
-namespace app\core\db;
+namespace impossible\phpmvc\db;
 
 
-use app\core\Application;
+use impossible\phpmvc\Application;
 
 class Database
 {

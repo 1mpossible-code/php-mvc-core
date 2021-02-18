@@ -1,9 +1,9 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
-use app\core\middlewares\BaseMiddleware;
+use impossible\phpmvc\middlewares\BaseMiddleware;
 
 /**
  * Class: Controller

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 /**
  * Class Request
- * @package app\core
+ * @package impossible\phpmvc
  */
 class Request
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core;
+namespace impossible\phpmvc;
 
-use app\core\db\Database;
-use app\core\db\DbModel;
+use impossible\phpmvc\db\Database;
+use impossible\phpmvc\db\DbModel;
 
 /**
  * Class Application
- * @package app\core
+ * @package impossible\phpmvc
  */
 class Application
 {

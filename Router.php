@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 use app\controllers\SiteController;
-use app\core\exception\NotFoundException;
+use impossible\phpmvc\exception\NotFoundException;
 
 /**
  * Class Router
- * @package app\core
+ * @package impossible\phpmvc
  */
 class Router
 {
