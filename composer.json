@@ -1,0 +1,16 @@
+{
+    "name": "impossible/php-mvc-core",
+    "authors": [
+        {
+            "name": "Max",
+            "email": "linme00p@gmail.com"
+        }
+    ],
+    "require": {},
+    "description": "Core of the php-mvc-framework",
+    "autoload": {
+        "psr-4": {
+            "impossible\\phpmvc\\": "."
+        }
+    }
+}
