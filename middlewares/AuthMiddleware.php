@@ -1,15 +1,15 @@
 <?php
 
 
-namespace app\core\middlewares;
+namespace impossible\phpmvc\middlewares;
 
 
-use app\core\Application;
-use app\core\exception\ForbiddenException;
+use impossible\phpmvc\Application;
+use impossible\phpmvc\exception\ForbiddenException;
 
 /**
  * Class AuthMiddleware
- * @package app\core\middlewares
+ * @package impossible\phpmvc\middlewares
  */
 class AuthMiddleware extends Middleware
 {

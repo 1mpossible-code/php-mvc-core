@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
 use app\models\User;

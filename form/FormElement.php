@@ -1,14 +1,14 @@
 <?php
 
 
-namespace app\core\form;
+namespace impossible\phpmvc\form;
 
 
-use app\core\Model;
+use impossible\phpmvc\Model;
 
 /**
  * Class FormElement
- * @package app\core\form
+ * @package impossible\phpmvc\form
  */
 abstract class FormElement
 {

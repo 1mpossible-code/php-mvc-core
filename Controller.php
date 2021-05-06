@@ -1,14 +1,14 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
-use app\core\middlewares\Middleware;
+use impossible\phpmvc\middlewares\Middleware;
 
 /**
  * Base Controller Class
- * @package app\core
+ * @package impossible\phpmvc
  */
 class Controller
 {

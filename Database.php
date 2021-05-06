@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
 use PDO;
@@ -9,7 +9,7 @@ use PDOStatement;
 
 /**
  * Class Database
- * @package app\core
+ * @package impossible\phpmvc
  */
 class Database
 {

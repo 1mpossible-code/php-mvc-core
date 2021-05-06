@@ -1,14 +1,14 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
 use PDOStatement;
 
 /**
  * Class DbModel
- * @package app\core
+ * @package impossible\phpmvc
  */
 abstract class DbModel extends Model
 {

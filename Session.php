@@ -1,12 +1,12 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
 /**
  * Class Session
- * @package app\core
+ * @package impossible\phpmvc
  */
 class Session
 {

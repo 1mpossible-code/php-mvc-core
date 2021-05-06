@@ -1,12 +1,12 @@
 <?php
 
 
-namespace app\core\form\elements;
+namespace impossible\phpmvc\form\elements;
 
 
 /**
  * Email type input
- * @package app\core\form\elements
+ * @package impossible\phpmvc\form\elements
  */
 class InputEmail extends Input
 {

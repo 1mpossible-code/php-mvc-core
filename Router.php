@@ -1,10 +1,10 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
-use app\core\exception\NotFoundException;
+use impossible\phpmvc\exception\NotFoundException;
 
 /**
  * Class Router

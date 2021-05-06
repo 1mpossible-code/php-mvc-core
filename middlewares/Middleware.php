@@ -1,12 +1,12 @@
 <?php
 
 
-namespace app\core\middlewares;
+namespace impossible\phpmvc\middlewares;
 
 
 /**
  * Base Middleware class
- * @package app\core\middlewares
+ * @package impossible\phpmvc\middlewares
  */
 abstract class Middleware
 {

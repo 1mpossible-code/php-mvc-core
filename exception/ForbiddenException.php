@@ -1,12 +1,12 @@
 <?php
 
 
-namespace app\core\exception;
+namespace impossible\phpmvc\exception;
 
 
 /**
  * Class ForbiddenException
- * @package app\core\exception
+ * @package impossible\phpmvc\exception
  */
 class ForbiddenException extends \Exception
 {

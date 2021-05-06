@@ -1,12 +1,12 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
 /**
  * Class Model
- * @package app\core
+ * @package impossible\phpmvc
  */
 abstract class Model
 {

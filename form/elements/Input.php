@@ -1,14 +1,14 @@
 <?php
 
 
-namespace app\core\form\elements;
+namespace impossible\phpmvc\form\elements;
 
 
-use app\core\form\FormElement;
+use impossible\phpmvc\form\FormElement;
 
 /**
  * Base input class
- * @package app\core\form\elements
+ * @package impossible\phpmvc\form\elements
  */
 abstract class Input extends FormElement
 {

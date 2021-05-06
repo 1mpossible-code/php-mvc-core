@@ -1,12 +1,12 @@
 <?php
 
 
-namespace app\core;
+namespace impossible\phpmvc;
 
 
 /**
  * Interface MigrationInterface
- * @package app\core
+ * @package impossible\phpmvc
  */
 interface MigrationInterface
 {
