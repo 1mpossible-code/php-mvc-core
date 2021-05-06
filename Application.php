@@ -14,6 +14,18 @@ use Exception;
 class Application
 {
     /**
+     * Listen event before request
+     */
+    public const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    /**
+     * Listen event after request
+     */
+    public const EVENT_AFTER_REQUEST = 'afterRequest';
+    /**
+     * @var array
+     */
+    protected array $eventListeners = [];
+    /**
      * @var string
      */
     public static string $ROOT_DIR;
@@ -97,6 +109,8 @@ class Application
      */
     public function run(): void
     {
+        // Trigger event before request
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         // If have exceptions handle them
         try {
             // Router start resolving
@@ -170,5 +184,33 @@ class Application
     public static function isGuest(): bool
     {
         return !self::$app->user;
+    }
+
+    /**
+     * Execute all registered callbacks
+     * for the given event
+     * @param string $eventName
+     */
+    public function triggerEvent(string $eventName): void
+    {
+        // Get all callbacks
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+        // Iterate over the callbacks and execute them
+        foreach ($callbacks as $callback) {
+            // Execute callback
+            $callback();
+        }
+    }
+
+    /**
+     * Register specified callback
+     * to the specified event
+     * @param string $eventName
+     * @param callable $callback
+     */
+    public function on(string $eventName, callable $callback): void
+    {
+        // Register new callback
+        $this->eventListeners[$eventName][] = $callback;
     }
 }
