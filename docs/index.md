@@ -15,7 +15,8 @@ It is a documentation for PHP MVC Core
     * [ Router ](#router)
     * [ Database ](#database)
     * [ View ](#view)
-    * [ Migrations ](#migrations)
+    * [ Controller ](#controller)
+* [ Migrations ](#migrations)
 
 ## Installation
 
@@ -107,7 +108,7 @@ triggerEvent($eventName) | Method that executes all registered callbacks for the
 on($eventName, $callback) | Method that registers specified callback to specified event
 isGuest() | Static method that checks if current user is guest
 
-## Request
+### Request
 
 [Request][] is a class that implements request logic in application
 
@@ -119,7 +120,7 @@ getPath() | Get URI path
 method() | Get current method of request
 getBody() | Get sanitized data from request
 
-## Response
+### Response
 
 [Response][] is a class that implements response logic
 
@@ -130,7 +131,7 @@ Property | Definition
 redirect($url) | Redirect user to specified URL
 setStatusCode($code) | Set response status code
 
-## Session
+### Session
 
 [Session][] is a class that implements session logic
 
@@ -145,7 +146,9 @@ getFlash($key) | Get specified session flash message
 hasFlash($key) | Check if the flash message with specified key is exists
 remove($key) | Remove the given key from session
 
-## Router
+### Router
+
+* [Define](#define-new-route)
 
 [Router][] is a class that implements application routing
 
@@ -159,9 +162,26 @@ get($path, $callback) | Create new 'get' route
 post($path, $callback) | Create new 'post' route
 resolve() | Process request data to return valid result of routing logic
 
-## Database
+#### Define new route
+You can define routes in [`index.php`] file through [Application]:
 
-[Database][] is a class that controls different database processes
+```php
+// index.php
+/** @var \impossible\phpmvc\Application $app */
+// Controller's index method
+$app->router->get('/',[\impossible\phpmvc\Controller::class, 'index']);
+// Render view with the name 'view'
+$app->router->get('/', 'view');
+// Render plain text
+$app->router->get('/', function () {
+    return 'plain text';
+});
+
+```
+
+### Database
+
+[Database] is a class that controls different database processes
 
 Database has:
 
@@ -169,12 +189,12 @@ Property | Definition
 ---------|-----------
 PDO | Instance of [PDO](https://www.php.net/manual/book.pdo.php)
 prepare($SQL) | Prepare SQL statement
-applyMigrations() | Apply new [migrations][]
+applyMigrations() | Apply new [migrations]
 saveMigrations($migrations) | Save migration names from given array to migrations table
 createMigrationsTable() | Create migrations table if not already exists
 getAppliedMigrations() | Get already applied migrations
 
-## View
+### View
 
 [View] is a class that implements view system
 
@@ -188,6 +208,51 @@ title | Page title
 renderView($view) | Render specified view
 renderContent($content) | Render content data directly to layout
 
+### Controller
+
+* [Create](#create-new-controller)
+* [Usage](#usage-of-controller)
+
+[Controller] is a base class that should be used with developers to implement application logic
+
+Controller has:
+
+Property | Definition
+---------|-----------
+layout | Contains current layout. Default: 'main'
+action | Contains current action
+render($view, $params) | Render specified view with the given params
+setLayout($layout) | Set layout property
+registerMiddleware($middleware) | Register new [middleware](#middlewares)
+getMiddlewares() | Get all registered [middlewares](#middlewares)
+
+#### Create new controller
+
+To create new [controller] implement base [Controller] class and create action(s) in
+it. [ Example ](https://github.com/1mpossible-code/php-mvc-framework/blob/master/controllers/ContactController.php)
+
+#### Usage of controller
+
+You may pass controller and action to [ route ](#define-new-route) array in [index.php](#index):
+
+```php
+/** @var \impossible\phpmvc\Application $app */
+// Controller is the first parameter and name of the action as a second
+$app->router->get('/',[\impossible\phpmvc\Controller::class, 'index']);
+```
+
+[comment]: <> (### Model)
+
+[comment]: <> (#### DbModel)
+
+[comment]: <> (## User)
+
+[comment]: <> (## Exceptions)
+
+[comment]: <> (## Middlewares)
+
+[comment]: <> (## Form Widget)
+
 ## Migrations
 
 [`migrations.php`][] is a file that controls migration logic.
@@ -198,11 +263,11 @@ To execute migrations make:
 php migrations.php
 ```
 
+> You can use [Application](#application) db property to control database
+
 To create new migration just implement [MigrationInterface](../MigrationInterface.php)
 
-> You can use [Application][] db property to control database
-
-Example of migration can find
+Example of migration can be found
 with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master/migrations/m0001_create_users_table.php)
 
 [Application]: ../Application.php
@@ -216,6 +281,8 @@ with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master
 [Router]: ../Router.php
 
 [View]: ../View.php
+
+[Controller]: ../Controller.php
 
 [Database]: ../Database.php
 
