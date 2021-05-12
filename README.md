@@ -6,7 +6,7 @@
 It is a core of [ PHP MVC Framework ](https://github.com/1mpossible-code/php-mvc-framework)
 
 * [Installation](#installation)
-* [Usage](#usage)
+* [Documentation](#documentation)
 * [Contributing](#contributing)
 * [Credits](#credits)
 * [License](#license)
@@ -19,7 +19,7 @@ It is a core of [ PHP MVC Framework ](https://github.com/1mpossible-code/php-mvc
 composer require impossible/php-mvc-core
 ```
 
-# Usage
+# Documentation
 
 Documentation can be found with [ the link ](./docs/index.md)
 
