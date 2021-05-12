@@ -4,7 +4,6 @@
 namespace impossible\phpmvc;
 
 
-use app\models\User;
 use Exception;
 
 /**
@@ -83,7 +82,7 @@ class Application
     public function __construct(string $rootPath, array $config)
     {
         // Get user class string from config
-        $this->userClass = $config['userClass'] ?? User::class;
+        $this->userClass = $config['userClass'];
         // Get layout from config or 'main'
         // as default value
         $this->layout = $config['layout'] ?? 'main';
