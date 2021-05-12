@@ -89,6 +89,8 @@ control the application:
 - You define routes;
 - Run application.
 
+----
+
 ### Application
 
 [Application](../Application.php) is a main class that controls all processes between
@@ -116,6 +118,8 @@ triggerEvent($eventName) | Method that executes all registered callbacks for the
 on($eventName, $callback) | Method that registers specified callback to specified event
 isGuest() | Static method that checks if current [ user ](#user) is guest
 
+----
+
 ### Request
 
 [Request](../Request.php) is a class that implements request logic in application
@@ -128,6 +132,8 @@ getPath() | Get URI path
 method() | Get current method of request
 getBody() | Get sanitized data from request
 
+----
+
 ### Response
 
 [Response](#response) is a class that implements response logic
@@ -138,6 +144,8 @@ Property | Definition
 ---------|-----------
 redirect($url) | Redirect [ user ](#user) to specified URL
 setStatusCode($code) | Set response status code
+
+----
 
 ### Session
 
@@ -153,6 +161,8 @@ setFlash($key, $value) | Set specified session flash message
 getFlash($key) | Get specified session flash message
 hasFlash($key) | Check if the flash message with specified key is exists
 remove($key) | Remove the given key from session
+
+----
 
 ### Router
 
@@ -192,6 +202,8 @@ $app->router->get('/', function () {
 You can see examples
 with [ the link ](https://github.com/1mpossible-code/php-mvc-framework/blob/master/public/index.php)
 
+----
+
 ### Database
 
 [Database](../Database.php) is a class that controls different database processes
@@ -206,6 +218,8 @@ applyMigrations() | Apply new [migrations](#migrations)
 saveMigrations($migrations) | Save [ migration ](#migrations) names from given array to migrations table
 createMigrationsTable() | Create [ migrations ](#migrations) table if not already exists
 getAppliedMigrations() | Get already applied [ migrations ](#migrations)
+
+----
 
 ### View
 
@@ -248,6 +262,8 @@ You **MUST** create a {{content}} placeholder to specify where content will be r
 
 You can see an example
 with [ the link ](https://github.com/1mpossible-code/php-mvc-framework/blob/master/views/layouts/main.php)
+
+----
 
 ### Controller
 
@@ -293,10 +309,11 @@ To specify new [ middleware ](#middlewares) in controller:
 You can see an example of using middlewares
 with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master/controllers/ProfileController.php)
 
+----
+
 ### Model
 
 * [Rules](#model-rules)
-* [DbModel](#DbModel)
 * [Create](#create-new-model)
 
 [Model](../Model.php) is a class that works with data.
@@ -335,6 +352,8 @@ To create new model, implement [Model](../Model.php) or [DbModel](#dbmodel) clas
 
 [ Example of Model class ](https://github.com/1mpossible-code/php-mvc-framework/blob/master/models/LoginForm.php)
 
+----
+
 ### DbModel
 
 [DbModel](../DbModel.php) is an extended class with features to control database that implements [Model](#model).
@@ -349,8 +368,6 @@ attributes() | Attributes that will be saved to database.
 save() | Save attributes to database.
 findOne($where) | Static method that finds one model record from database with $where parameters.
 prepare($SQL) | Static method that prepares SQL statements
-
-----
 
 ## User
 
@@ -444,12 +461,12 @@ To create new form you need:
 You can see an example of usage Form Widget
 with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master/views/contact.php)
 
-
 ## Migrations
 
 * [Create](#create-new-migration)
 
-[`migrations.php`][] is a file that controls migration logic.
+[`migrations.php`](https://github.com/1mpossible-code/php-mvc-framework/blob/master/migrations.php) is a file that
+controls migration logic.
 
 To execute migrations make:
 
@@ -465,3 +482,9 @@ To create new migration just implement [MigrationInterface](../MigrationInterfac
 
 Example of migration can be found
 with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master/migrations/m0001_create_users_table.php)
+
+---
+
+All rights are reserved. Copyright © 2021 [1mpossible-code](https://github.com/1mpossible-code).
+
+This project is [GPLv3](https://www.https://www.gnu.org/licenses/gpl-3.0.htmlgnu.org/licenses/gpl-3.0) licensed.
