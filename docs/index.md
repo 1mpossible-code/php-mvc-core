@@ -468,17 +468,27 @@ with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master
 [`migrations.php`](https://github.com/1mpossible-code/php-mvc-framework/blob/master/migrations.php) is a file that
 controls migration logic.
 
-To execute migrations make:
+To execute migrations help make:
 
 ```shell
 php migrations.php
 ```
 
-> You can use [Application](#application) db property to control database
+Migrations have:
+
+Argument | Definition
+---------|-----------
+up | Apply migrations
+down | Destroy migrations
+fresh | Make fresh migrations
+
+> Any another command will execute help message
 
 ### Create new migration
 
 To create new migration just implement [MigrationInterface](../MigrationInterface.php)
+
+> You can use [Application](#application) db property to control database inside migration file
 
 Example of migration can be found
 with [the link](https://github.com/1mpossible-code/php-mvc-framework/blob/master/migrations/m0001_create_users_table.php)
