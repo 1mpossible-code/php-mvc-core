@@ -3,7 +3,7 @@
 ![](https://img.shields.io/github/v/release/1mpossible-code/php-mvc-core)
 ![](https://img.shields.io/github/license/1mpossible-code/php-mvc-core?color=green)
 
-It is a core of [ PHP MVC Framework ](https://github.com/1mpossible-code/php-mvc-framework)
+It is a core of [ PHP MVC Framework ](https://github.com/1mpossible-code/php-mvc-framework#php-mvc-framework)
 
 * [Installation](#installation)
 * [Documentation](#documentation)
