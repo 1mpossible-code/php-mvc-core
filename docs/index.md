@@ -72,8 +72,21 @@ $config = [
 ];
 ```
 
+
+### Environment
+
 Basic build uses [`vlucas/phpdotenv`](https://packagist.org/packages/vlucas/phpdotenv) package to extract `.env` file
 parameters into `$_ENV` php variable.
+
+All parameters in `.env` file would be passed to `$_ENV` variable.
+
+Used parameters:
+
+Property | Definition
+---------|-----------
+DB_DSN | [Database source name](https://en.wikipedia.org/wiki/Data_source_name)
+DB_USER | Database user
+DB_PASSWORD | Database password
 
 ## Architecture
 
