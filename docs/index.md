@@ -72,7 +72,6 @@ $config = [
 ];
 ```
 
-
 ### Environment
 
 Basic build uses [`vlucas/phpdotenv`](https://packagist.org/packages/vlucas/phpdotenv) package to extract `.env` file
@@ -209,6 +208,12 @@ $app->router->get('/', 'view');
 // Render plain text
 $app->router->get('/', function () {
     return 'plain text';
+});
+// Render JSON
+$app->router->get('/', function () {
+    // Return data in array to
+    // render it as JSON data
+    return ['foo' => 'bar', 123, 'test'];
 });
 ```
 
