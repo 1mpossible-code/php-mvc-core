@@ -83,6 +83,21 @@ class Router
         if (is_string($callback)) {
             return Application::$app->view->renderView($callback);
         }
+        // Return a json encoded data if callback is
+        // a function that returns array data
+        if (is_callable($callback)) {
+            // Get value from function
+            $value = $callback($this->request, $this->response);
+            // Make JSON if array
+            if (is_array($value)) {
+                // Add header to set content type to JSON
+                header('Content-Type: application/json');
+                // Encode array as JSON value
+                $value = json_encode($value);
+            }
+            // Return the value
+            return $value;
+        }
         // Check if the callback is array; if true replace
         // the link to the controller by its instance in
         // callback array and set Application controller param
