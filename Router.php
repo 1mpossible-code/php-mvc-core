@@ -85,7 +85,7 @@ class Router
         }
         // Return a json encoded data if callback is
         // a function that returns array data
-        if (is_callable($callback)) {
+        if (is_callable($callback) and !is_array($callback)) {
             // Get value from function
             $value = $callback($this->request, $this->response);
             // Make JSON if array
